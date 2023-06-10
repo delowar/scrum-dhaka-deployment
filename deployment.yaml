@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  delowar
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: delowar
+  template:
+    metadata:
+      labels:
+        app: delowar
+    spec:
+      containers:
+        - name: delowar
+          image: delowar02/scrum-dhaka:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
